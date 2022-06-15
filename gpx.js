@@ -571,7 +571,7 @@ L.GPX = L.FeatureGroup.extend({
 
       last = ll;
       coords.push(ll);
-      this._info.coords.push(ll);
+      this._coords.push(ll);
     }
 
     // add track
