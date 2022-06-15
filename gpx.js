@@ -72,7 +72,6 @@ var _DEFAULT_GPX_OPTS = {
   parseElements: ['track', 'route', 'waypoint'],
   joinTrackSegments: true
 };
-
 L.GPX = L.FeatureGroup.extend({
   initialize: function(gpx, options) {
     options.max_point_interval = options.max_point_interval || _MAX_POINT_INTERVAL_MS;
@@ -147,7 +146,7 @@ L.GPX = L.FeatureGroup.extend({
   get_distance:        function() { return this._info.length; },
   get_distance_imp:    function() { return this.to_miles(this.m_to_km(this.get_distance())); },
 
-  get_coords:          function() { return this._info.coods; },
+  get_coords:          function() { return this._info.coords; },
 
   get_start_time:      function() { return this._info.duration.start; },
   get_end_time:        function() { return this._info.duration.end; },
