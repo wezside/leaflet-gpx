@@ -147,6 +147,8 @@ L.GPX = L.FeatureGroup.extend({
   get_distance:        function() { return this._info.length; },
   get_distance_imp:    function() { return this.to_miles(this.m_to_km(this.get_distance())); },
 
+  get_coords:          function() { return this._info.coods; },
+
   get_start_time:      function() { return this._info.duration.start; },
   get_end_time:        function() { return this._info.duration.end; },
   get_moving_time:     function() { return this._info.duration.moving; },
@@ -276,7 +278,8 @@ L.GPX = L.FeatureGroup.extend({
       hr: {avg: 0, _total: 0, _points: []},
       duration: {start: null, end: null, moving: 0, total: 0},
       atemp: {avg: 0, _total: 0, _points: []},
-      cad: {avg: 0, _total: 0, _points: []}
+      cad: {avg: 0, _total: 0, _points: []},
+      coords: []
     };
   },
 
@@ -563,7 +566,7 @@ L.GPX = L.FeatureGroup.extend({
       }
 
       last = ll;
-      coords.push(ll);
+      this._info.coords.push(ll);
     }
 
     // add track
