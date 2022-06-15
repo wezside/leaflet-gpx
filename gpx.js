@@ -36,6 +36,10 @@
  * rendered on the Leaflet map.
  */
 
+/**
+ * Modified by Wezside @15Jun2022
+ */
+
 var L = L || require('leaflet');
 
 var _MAX_POINT_INTERVAL_MS = 15000;
