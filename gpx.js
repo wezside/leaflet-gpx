@@ -90,6 +90,7 @@ L.GPX = L.FeatureGroup.extend({
 
     this._gpx = gpx;
     this._layers = {};
+    this._coords = [];
     this._init_info();
 
     if (gpx) {
@@ -146,7 +147,7 @@ L.GPX = L.FeatureGroup.extend({
   get_distance:        function() { return this._info.length; },
   get_distance_imp:    function() { return this.to_miles(this.m_to_km(this.get_distance())); },
 
-  get_coords:          function() { return this._info.coords; },
+  get_coords:          function() { return this._coords; },
 
   get_start_time:      function() { return this._info.duration.start; },
   get_end_time:        function() { return this._info.duration.end; },
@@ -565,6 +566,7 @@ L.GPX = L.FeatureGroup.extend({
       }
 
       last = ll;
+      coords.push(ll);
       this._info.coords.push(ll);
     }
 

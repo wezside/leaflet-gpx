@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/mpetazzoni/leaflet-gpx/issues"
   },
-  "homepage": "https://github.com/mpetazzoni/leaflet-gpx#readme"
+  "homepage": "https://github.com/mpetazzoni/leaflet-gpx#readme",
+  "dependencies": {
+    "leaflet": "^1.8.0"
+  }
 }
