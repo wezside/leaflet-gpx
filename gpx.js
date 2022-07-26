@@ -306,11 +306,20 @@ L.GPX = L.FeatureGroup.extend({
   _parse: function(input, options, async) {
     var _this = this;
     var cb = function(gpx, options) {
-      var layers = _this._parse_gpx_data(gpx, options);
+      try {
+        var layers = _this._parse_gpx_data(gpx, options);
+      } catch(e) {
+        var layers = null;
+      }
       if (!layers) {
         _this.fire('error', { err: 'No parseable layers of type(s) ' + JSON.stringify(options.gpx_options.parseElements) });
         return;
-      }
+      }      
+/*       var layers = _this._parse_gpx_data(gpx, options);
+      if (!layers) {
+        _this.fire('error', { err: 'No parseable layers of type(s) ' + JSON.stringify(options.gpx_options.parseElements) });
+        return;
+      } */
       _this.addLayer(layers);
       _this.fire('loaded', { layers: layers, element: gpx });
     }
